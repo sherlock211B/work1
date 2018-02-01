@@ -1,0 +1,6 @@
+D:\应用宝照片备份\Project\work1\firstwork\BankSystem\bin\Debug\BankSystem.exe.config
+D:\应用宝照片备份\Project\work1\firstwork\BankSystem\bin\Debug\BankSystem.exe
+D:\应用宝照片备份\Project\work1\firstwork\BankSystem\bin\Debug\BankSystem.pdb
+D:\应用宝照片备份\Project\work1\firstwork\BankSystem\obj\Debug\BankSystem.csprojResolveAssemblyReference.cache
+D:\应用宝照片备份\Project\work1\firstwork\BankSystem\obj\Debug\BankSystem.exe
+D:\应用宝照片备份\Project\work1\firstwork\BankSystem\obj\Debug\BankSystem.pdb
