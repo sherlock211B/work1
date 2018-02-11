@@ -25,29 +25,29 @@ namespace BankSystem
             Account account = bank.FindAccount(id, pwd);
             if(account==null)
             {
-                Show("Card invalid and password not correct");
+                Show("account invalid and password not correct");
                 return;
             }
           
             
             while(true)
             {
-                Show("1: display; 2: Save; 3: withdraw; 4:open creditCard; 5: Exit");
+                Show("1: display; 2: Save; 3: withdraw; 4: creditCard; 5: Exit");
                 string op = GetInput();
                 if (op == "1")
                 {
-                    Show("balance: " + account.getmoney());
+                    Show("balance: " + account.Getmoney());
                 }
                 if (op == "2")
                 {
                     Show("save money");
                     string srmoney = GetInput();
                     double money = double.Parse(srmoney);
-                    bool bm = account.saveMoney(money);
+                    bool bm = account.SaveMoney(money);
                     if (bm) Show("OK!");
                     else Show("error");
 
-                    Show("balance: " + account.getmoney());
+                    Show("balance: " + account.Getmoney());
 
                 }
                 if (op == "3")
@@ -55,32 +55,63 @@ namespace BankSystem
                     Show("withdraw money");
                     string srmoney = GetInput();
                     double money = double.Parse(srmoney);
-                    bool bm = account.withdrawMoney(money);
+                    bool bm = account.WithdrawMoney(money);
                     if (bm) Show("OK!");
                     else Show("error");
 
-                    Show("balance: " + account.getmoney());
+                    Show("balance: " + account.Getmoney());
                 }
                 if (op == "4")
                 {
-                    Show("open creditCard");
                     Show("Please insert your creditCardaccount");
                     string creditid = GetInput();
                     Show("Please insert your creditCardPassword");
                     string creditpwd = GetInput();
-                    Show("Please insert your wish creditLimit");
-                    string ncreditLimit= GetInput();
-                    double creditLimit= double.Parse(ncreditLimit);
-                    creditCard creditCard = new creditCard(creditid, creditpwd, 0, creditLimit);
-                    Show("creditLimit: " + creditCard.getLimit());
+                    creditCard creditCard = bank.FindCreditCard(creditid, creditpwd);
+                    if (creditCard == null)
+                    {
+                        Show("Card invalid and password not correct");
+                        return;
+                    }
+                    if (creditCard != null)
+                    {
+                        while (true)
+                        {
+                            Show("1: displayCardLine; 2: addCreditCardLine; 3: dropCreditCardLine;4: Exit");
+                            string option = GetInput();
+                            if (option == "1")
+                            {
+                                Show("creditCardLine: " + creditCard.GetLine());
+                            }
+                            if (option == "2")
+                            {
+                                Show("add creditCardLine");
+                                string srcreditCardLine = GetInput();
+                                double creditCardLine = double.Parse(srcreditCardLine);
+                                bool bm = creditCard.AddLine(creditCardLine);
+                                if (bm) Show("OK!");
+                                else Show("error");
 
-                    Show("save creditCardmoney");
-                    string srmoney = GetInput();
-                    double money = double.Parse(srmoney);
-                    bool bm = creditCard.saveMoney(money);
-                    if (bm) Show("OK!");
-                    else Show("error");
-                    Show("balance: " + creditCard.getmoney());
+                                Show("creditCardLine: " + creditCard.GetLine());
+                            }
+                            if (option == "3")
+                            {
+                                Show("drop creditCardLine");
+                                string srcreditCardLine = GetInput();
+                                double creditCardLine = double.Parse(srcreditCardLine);
+                                bool bm = creditCard.DropLine(creditCardLine);
+                                if (bm) Show("OK!");
+                                else Show("error");
+
+                                Show("creditCardLine: " + creditCard.GetLine());
+                            }
+                            if (option == "4")
+                            {
+                                break;
+                            }
+                        }
+                    }
+                     
                 }
                 if (op == "5")
                 {

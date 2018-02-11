@@ -9,34 +9,38 @@ namespace BankSystem
 {
     class creditCard : Account
     {
-        double creditLimit;
-        public creditCard(string id, string pwd, double money, double creditLimit) : base(id, pwd, money)
+        double creditLine;
+        public creditCard(string id, string pwd, double money, double creditLine) : base(id, pwd, money)
         {
-            this.creditLimit = creditLimit;
+            this.creditLine = creditLine;
         }
 
-        //得到creditLimit
-        public double getLimit()
+        //得到creditLine
+        public double GetLine()
         {
-            return creditLimit;
+            return creditLine;
         }
-        //设置creditLimit
-        public void setLimit(double creditLimit)
+
+     
+        public bool AddLine(double creditLine)
         {
-            this.creditLimit = creditLimit;
+            if (creditLine < 0) return false;
+
+            this.creditLine += creditLine;
+            return true;
+           
 
         }
 
-      
-        //取钱
-        public override bool withdrawMoney(double money)
+        public bool DropLine(double creditLine)
         {
-            if (money >= money)
+            if (this.creditLine >= creditLine)
             {
-                money -= money;
+                this.creditLine -= creditLine;
                 return true;
             }
             return false;
+           
 
         }
     }

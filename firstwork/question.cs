@@ -17,21 +17,15 @@ namespace firstwork
             InitializeComponent();
         }
 
-        private void srA_Click(object sender, EventArgs e)
-        {
-
-        }
-        int a, b,num,grade,count;
+        
+        int a,b,num,grade,count;
 
         string op;
 
         int result;
         Random rnd = new Random();
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnNew_Click(object sender, EventArgs e)
         {

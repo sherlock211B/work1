@@ -21,36 +21,36 @@ namespace BankSystem
 
 
         //得到id
-        public string getId()
+        public string GetId()
         {
             return id;
         }
        //设置id
-        public void setId(string id)
+        public void SetId(string id)
         {
             this.id = id;
            
         }
 
         //得到pwd
-        public string getPwd()
+        public string GetPwd()
         {
             return pwd;
         }
         //设置pwd
-        public void setPwd(string pwd)
+        public void SetPwd(string pwd)
         {
             this.pwd = pwd;
 
         }
 
         //得到money
-        public double getmoney()
+        public double Getmoney()
         {
             return money;
         }
         //设置money
-        public void setmoney(double money)
+        public void Setmoney(double money)
         {
             this.money = money;
 
@@ -64,7 +64,7 @@ namespace BankSystem
         }
 
         //存钱
-        public  bool saveMoney(double money)
+        public  bool SaveMoney(double money)
         {
             if (money < 0) return false;
 
@@ -72,7 +72,7 @@ namespace BankSystem
             return true;
         }
         //取钱
-        public virtual bool withdrawMoney(double money)
+        public virtual bool WithdrawMoney(double money)
         {
             if (this.money >= money)
             {

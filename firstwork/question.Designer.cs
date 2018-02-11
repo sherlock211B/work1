@@ -74,7 +74,7 @@
             this.lblA.Size = new System.Drawing.Size(41, 12);
             this.lblA.TabIndex = 0;
             this.lblA.Text = "label1";
-            this.lblA.Click += new System.EventHandler(this.srA_Click);
+            //this.lblA.Click += new System.EventHandler(this.srA_Click);
             // 
             // lblop
             // 
@@ -176,7 +176,7 @@
             this.lblgrade.Size = new System.Drawing.Size(41, 12);
             this.lblgrade.TabIndex = 9;
             this.lblgrade.Text = "label1";
-            this.lblgrade.Click += new System.EventHandler(this.label2_Click);
+            //this.lblgrade.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox3
             // 

@@ -19,7 +19,7 @@ namespace firstwork
 
         Random random = new Random();
 
-        Color getRandomColor()
+        Color GetRandomColor()
         {
             return Color.FromArgb(
             random.Next(256),
@@ -41,13 +41,13 @@ namespace firstwork
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             //屏保图片
-            pictureBox1.Left += deltX;
-            pictureBox1.Top += deltY;
-            if (pictureBox1.Top < 0 ||
-            pictureBox1.Top + pictureBox1.Height > this.Height)
+            pic_show.Left += deltX;
+            pic_show.Top += deltY;
+            if (pic_show.Top < 0 ||
+            pic_show.Top + pic_show.Height > this.Height)
                 deltY = -deltY;
-            if (pictureBox1.Left < 0 ||
-            pictureBox1.Left +pictureBox1.Width > this.Width)
+            if (pic_show.Left < 0 ||
+            pic_show.Left +pic_show.Width > this.Width)
                 deltX = -deltX;
 
             //画圆
@@ -59,7 +59,7 @@ namespace firstwork
             //for (int r = 0; r < this.Height / 2; r++)
             //{
             //    g.DrawEllipse(
-            //    new Pen(getRandomColor(), 1),
+            //    new Pen(GetRandomColor(), 1),
             //    x0 - r, y0 - r, r * 2, r * 2
             //    );
 

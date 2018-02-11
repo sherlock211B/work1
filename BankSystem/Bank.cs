@@ -39,5 +39,34 @@ namespace BankSystem
             }
             return null;
         }
+
+        List<creditCard> creditCards = new List<creditCard>();
+
+        public creditCard OpenCreditCard(string id, string pwd, double money, double creditLine)
+        {
+            creditCard creditCard = new creditCard(id, pwd, money,creditLine);
+            creditCards.Add(creditCard);
+            return creditCard;
+        }
+
+        public bool CloseCreditCard(creditCard creditCard)
+        {
+            int idx = creditCards.IndexOf(creditCard);
+            if (idx < 0) return false;
+            creditCards.Remove(creditCard);
+            return true;
+        }
+
+        public creditCard FindCreditCard(string id, string pwd)
+        {
+            foreach (creditCard creditCard in creditCards)
+            {
+                if (creditCard.Ismatch(id, pwd))
+                {
+                    return creditCard;
+                }
+            }
+            return null;
+        }
     }
 }
